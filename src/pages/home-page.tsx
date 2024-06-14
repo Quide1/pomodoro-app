@@ -1,11 +1,13 @@
-import React from 'react'
-
+import React from "react";
+import HomeHeader from "@/components/HomeHeader";
+import HomeMain from "@/components/HomeMain";
 function HomePage() {
   return (
-    <div>
-      <h1>Home page</h1>
-    </div>
-  )
+    <>
+      <HomeHeader />
+      <HomeMain />
+    </>
+  );
 }
 
-export default HomePage
+export default HomePage;
