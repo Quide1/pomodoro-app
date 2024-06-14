@@ -11,7 +11,7 @@ export interface AppState {
     timerStatus: TimerStatus; // estado del temporizador
     preferences: Preferences; // preferencias del usuario
     /**Actions */
-    changeConfigTimer: (newSettingsTimer: TimerSettings) => Promise<void>;
+    changeConfigTimer: ({key,value} : {key:keyof TimerSettings , value:number}) => Promise<void>;
     startTimer: () => Promise<void>;
     stopTimer: () => Promise<void>;
     resetTimer: () => Promise<void>;
@@ -39,14 +39,21 @@ const initialStatus: TimerStatus = {
     currentTimer: "pomodoro",
     isRunning: false,
 };
-export const usePomodoroStore = create<AppState>((set) => ({
+export const usePomodoroStore = create<AppState>((set, get) => ({
     timerSettings: initialTimerSettings,
     pomodoroSession: initialPomodoroSession,
     preferences: initialPreferences,
     timerStatus: initialStatus,
-    changeConfigTimer: async (newSettingsTimer) => {
-        set((state) => ({ ...state, timerSettings: newSettingsTimer }));
+    changeConfigTimer: async ({key,value}) => {
+
+        const { timerSettings } = get();
+        const newTimerSettings = {
+            ...timerSettings,
+            [key] : value,
+        };
+        set(() => ({ timerSettings: newTimerSettings }));
     },
+
     startTimer: async () => {
         console.log("Start Timer");
     },

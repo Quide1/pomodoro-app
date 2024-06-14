@@ -3,6 +3,7 @@ export interface TimerSettings {
     shortBreak: number;
     longBreak: number;
 }
+
 export interface PomodoroSession {
     completedPomodoros: number;
 }

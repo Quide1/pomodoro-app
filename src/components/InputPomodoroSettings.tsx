@@ -5,12 +5,18 @@ type InputPomodoroProps = {
   id: string;
   label: string;
   currentTime: number;
+  createOnChangeHandler: OnChangeFunction
 };
 
+export type OnChangeFunction = (
+  event: React.ChangeEvent<HTMLInputElement>
+) => void
 
-function InputPomodoroSettings({ id, label, currentTime }: InputPomodoroProps) {
 
 
+function InputPomodoroSettings({ id, label, currentTime,createOnChangeHandler }: InputPomodoroProps) {
+
+ 
   return (
     <div className="grid grid-cols-4 items-center gap-6 ">
       <Label htmlFor={id} className="text-right col-span-2">
@@ -21,6 +27,7 @@ function InputPomodoroSettings({ id, label, currentTime }: InputPomodoroProps) {
         type="number"
         defaultValue={currentTime}
         className="col-span-2 border-0 border-blue-700"
+        onChange={createOnChangeHandler}
       />
     </div>
   );
