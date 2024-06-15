@@ -1,13 +1,11 @@
-import Timer from '@/components/timer'
-
+import Timer from "@/components/Timer";
 
 function HomeMain() {
   return (
-    <main>
-        <Timer/>
-        <h1>Contendio</h1>
-      </main>
-  )
+    <main className="p-2 bg-gray-800 border-2 border-red-600 min-h-screen flex flex-col items-center ">
+      <Timer />
+    </main>
+  );
 }
 
-export default HomeMain
+export default HomeMain;

@@ -7,6 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose
 } from "@/components/ui/dialog";
 import SettingsIcon from "@/icons/SettingsIcon";
 import SettingsDialogContent from "./SettingsDialogContent";
@@ -28,7 +29,10 @@ function HomeHeader() {
           </DialogHeader>
           <SettingsDialogContent />
           <DialogFooter>
+            <DialogClose asChild={true}>
             <Button type="submit">Ok</Button>
+
+            </DialogClose>
           </DialogFooter>
         </DialogContent>
       </Dialog>
