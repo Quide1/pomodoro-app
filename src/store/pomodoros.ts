@@ -5,6 +5,7 @@ import {
     type TimerStatus,
     type Preferences,
 } from "@/types/pomodoros";
+import { nextTimer } from "@/utils/nextTimer";
 export interface AppState {
     timerSettings: TimerSettings; // configuraciones del temporizador
     pomodoroSession: PomodoroSession; // sesión de Pomodoro
@@ -33,15 +34,17 @@ export interface AppState {
 }
 
 const initialTimerSettings: TimerSettings = {
-    pomodoro: 1500,
-    shortBreak: 300,
+    pomodoro: 3,
+    shortBreak: 2   ,
     longBreak: 1200,
 };
 const initialPomodoroSession: PomodoroSession = {
-    completedPomodoros: 0,
+    pomodoroCount: 1,
+    completedSessions: 0
 };
 const initialPreferences: Preferences = {
     background: "#fafafa",
+    autoPlay: false,
     notificationSettings: {
         enabled: false,
         sound: "pajarito",
@@ -108,7 +111,9 @@ export const usePomodoroStore = create<AppState>((set, get) => ({
                 ...timerStatus,
                 isRunning: false,
             },
+            timersState: initialTimersStates
         });
+
     },
     completePomodoro: async () => {
         console.log("Complete Pomodoro");
@@ -122,5 +127,22 @@ export const usePomodoroStore = create<AppState>((set, get) => ({
     },
     completeTimer: async () => {
         console.log("Complete Timer");
+        const { timerStatus, pomodoroSession, resetTimer } = get()
+        const currentTimer = timerStatus.currentTimer
+        console.log(currentTimer)
+        const nexTimer = nextTimer(currentTimer, pomodoroSession.pomodoroCount)
+        console.log(pomodoroSession.pomodoroCount)
+        console.log(nexTimer)
+        const newPomodoroSession = {
+            ...pomodoroSession,
+            pomodoroCount: pomodoroSession.pomodoroCount+1
+        }
+        const newTimerStatus = {
+            isRunning: false,
+            currentTimer: nexTimer,
+        };
+        set({ timerStatus: newTimerStatus });
+        set({ pomodoroSession: newPomodoroSession })
+        resetTimer()
     },
 }));

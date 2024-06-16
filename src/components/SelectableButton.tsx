@@ -11,7 +11,7 @@ type SelectableButtonProps = {
 const SelectableButton: React.FC<SelectableButtonProps> = ({ label, isSelected, onClick,bgColor }) => {
   return (
     <button
-      className={`px-4 py-2 border ${isSelected ? 'bg-blue-500 text-white' : 'bg-white text-black'} ${bgColor}`}
+      className={`px-1 py-1 border text-clip ${isSelected ? 'bg-blue-500 text-white' : 'bg-white text-black'} ${bgColor}`}
       onClick={onClick}
     >
       {label}

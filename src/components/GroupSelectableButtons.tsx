@@ -1,5 +1,5 @@
 // ButtonGroup.tsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SelectableButton from "./SelectableButton";
 import { useConfigTimer } from "@/hooks/useConfigTimers";
 import { useTimerEntries } from "@/hooks/useTimerEntries";
@@ -8,10 +8,14 @@ import { useTimerFunctionalities } from "@/hooks/useTimerFunctionalities";
 
 const ButtonGroup: React.FC = () => {
     const { timerLabels } = useTimerEntries();
-    const {  changeCurrentTimer } = useConfigTimer();
+    const {  changeCurrentTimer,} = useConfigTimer();
     const {currentTimer } =useTimerFunctionalities()
     const [selectedButton, setSelectedButton] = useState<string>(currentTimer);
     const buttonEntries = Object.entries(timerLabels);
+
+    useEffect(()=>{
+    setSelectedButton((currentTimer))
+    },[currentTimer])
     const handleButtonClick = (keyLabel: string) => {
         if(keyLabel == selectedButton){
             return
@@ -27,9 +31,9 @@ const ButtonGroup: React.FC = () => {
                 <SelectableButton
                     key={key}
                     label={value}
-                    isSelected={selectedButton === value}
+                    isSelected={selectedButton === key}
                     onClick={() => handleButtonClick(key)}
-                    bgColor="bg-red-800"
+                    bgColor="bg-red-500"
                 />
             ))}
         </div>

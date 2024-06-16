@@ -5,7 +5,8 @@ export interface TimerSettings {
 }
 
 export interface PomodoroSession {
-    completedPomodoros: number;
+    pomodoroCount:number,
+    completedSessions:number
 }
 export interface TimerStatus {
     isRunning: boolean;
@@ -13,6 +14,7 @@ export interface TimerStatus {
 }
 export interface Preferences {
     background: string;
+    autoPlay:boolean;
     notificationSettings: {
         enabled: boolean;
         sound: string;
