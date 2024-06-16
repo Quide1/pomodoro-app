@@ -36,6 +36,7 @@ function Timer() {
 
   useEffect(() => {
     console.log(currentTimer);
+
   }, [currentTimer]);
   return (
     <Card className=" w-full max-w-[500px] flex flex-col items-center">

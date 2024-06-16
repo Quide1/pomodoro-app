@@ -31,6 +31,7 @@ export interface AppState {
     }) => Promise<void>;
     completeTimer: () => Promise<void>;
     restOneSecond: () => Promise<void>;
+    changeAutoStart : () => Promise<void>
 }
 
 const initialTimerSettings: TimerSettings = {
@@ -39,7 +40,7 @@ const initialTimerSettings: TimerSettings = {
     longBreak: 1200,
 };
 const initialPomodoroSession: PomodoroSession = {
-    pomodoroCount: 1,
+    pomodoroCount: 0,
     completedSessions: 0
 };
 const initialPreferences: Preferences = {
@@ -127,7 +128,7 @@ export const usePomodoroStore = create<AppState>((set, get) => ({
     },
     completeTimer: async () => {
         console.log("Complete Timer");
-        const { timerStatus, pomodoroSession, resetTimer } = get()
+        const { timerStatus, pomodoroSession, resetTimer,startTimer,preferences} = get()
         const currentTimer = timerStatus.currentTimer
         console.log(currentTimer)
         const nexTimer = nextTimer(currentTimer, pomodoroSession.pomodoroCount)
@@ -144,5 +145,17 @@ export const usePomodoroStore = create<AppState>((set, get) => ({
         set({ timerStatus: newTimerStatus });
         set({ pomodoroSession: newPomodoroSession })
         resetTimer()
+        if(preferences.autoPlay){
+            startTimer()
+
+        }
     },
+
+    changeAutoStart: async()=>{
+        const {preferences} = get()
+        set({preferences:{
+            ...preferences,
+            autoPlay:!preferences.autoPlay
+        }})
+    }
 }));

@@ -8,12 +8,14 @@ export function useConfigTimer() {
   const changeCurrentTimer = usePomodoroStore(
     (state) => state.changeCurrentTimer
   );
-
-
+  const changeAutoStart = usePomodoroStore((state)=>state.changeAutoStart)
+  const preferences = usePomodoroStore((state)=>state.preferences)
   const timerSettings = usePomodoroStore((state) => state.timerSettings);
   return {
     changeConfigTimer,
     timerSettings,
     changeCurrentTimer,
+    changeAutoStart,
+    preferences
   };
 }
