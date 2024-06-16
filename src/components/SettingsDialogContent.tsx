@@ -10,12 +10,14 @@ type CreatorOfOnChangeHandler = (key: keyof TimerSettings) => OnChangeFunction;
 function SettingsDialogContent() {
   const { timerEntries, timerLabels } = useTimerEntries();
   const { changeConfigTimer } = useConfigTimer();
-
   const createOnChangeHandler: CreatorOfOnChangeHandler = useCallback(
     (key) =>
       (event: React.ChangeEvent<HTMLInputElement>): void => {
         const newValue = parseInt(event.target.value);
-        changeConfigTimer({ key, value: newValue });
+        if(newValue < 1){
+          return
+        }
+        changeConfigTimer({ key, value: newValue * 60});
       },
     []
   );
@@ -27,8 +29,9 @@ function SettingsDialogContent() {
           key={key}
           id={key}
           label={timerLabels[key]}
-          currentTime={value}
+          currentTime={value / 60}
           createOnChangeHandler={createOnChangeHandler(key)}
+          
         />
       ))}
     </div>

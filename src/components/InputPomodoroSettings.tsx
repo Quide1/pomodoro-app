@@ -23,6 +23,8 @@ function InputPomodoroSettings({ id, label, currentTime,createOnChangeHandler }:
         {label}
       </Label>
       <Input
+        min="1"
+        step="1"
         id={id}
         type="number"
         defaultValue={currentTime}

@@ -2,12 +2,15 @@ import { CardFooter } from "@/components/ui/card";
 import { Button } from "./ui/button";
 import { useTimerFunctionalities } from "@/hooks/useTimerFunctionalities";
 
-
 function FooterTimerCard() {
-    const {startTimer} = useTimerFunctionalities()
-    return (
+  const { startTimer, timerStatus, pauseTime } = useTimerFunctionalities();
+  return (
     <CardFooter>
-      <Button onClick={startTimer}>Comenzar</Button>
+      {timerStatus.isRunning ? (
+        <Button onClick={pauseTime}>Pausar</Button>
+      ) : (
+        <Button onClick={startTimer}>Comenzar</Button>
+      )}
     </CardFooter>
   );
 }
