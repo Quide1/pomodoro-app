@@ -3,11 +3,11 @@ import { Button } from "./ui/button";
 import { useTimerFunctionalities } from "@/hooks/useTimerFunctionalities";
 
 function FooterTimerCard() {
-  const { startTimer, timerStatus, pauseTime } = useTimerFunctionalities();
+  const { startTimer, timerStatus, pauseTimer } = useTimerFunctionalities();
   return (
     <CardFooter>
       {timerStatus.isRunning ? (
-        <Button onClick={pauseTime}>Pausar</Button>
+        <Button onClick={pauseTimer}>Pausar</Button>
       ) : (
         <Button onClick={startTimer}>Comenzar</Button>
       )}

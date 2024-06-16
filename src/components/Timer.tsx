@@ -4,7 +4,14 @@ import FooterTimerCard from "./FooterTimerCard";
 import { useTimerFunctionalities } from "@/hooks/useTimerFunctionalities";
 import { useEffect } from "react";
 function Timer() {
-  const { currentTime, timerStatus, restOneSecond } = useTimerFunctionalities();
+  const {
+    currentTime,
+    timerStatus,
+    restOneSecond,
+    pauseTimer,
+    currentTimeInSeconds,
+  } = useTimerFunctionalities();
+
   useEffect(() => {
     if (!timerStatus.isRunning) {
       return; // No establecer el intervalo si no está corriendo
@@ -17,6 +24,13 @@ function Timer() {
     // Limpiar el intervalo cuando el componente se desmonte o cuando timerStatus cambie
     return () => clearInterval(IntervalTime);
   }, [timerStatus.isRunning, restOneSecond]);
+
+  useEffect(() => {
+    if (currentTimeInSeconds <= 0) {
+      pauseTimer();
+    }
+  }, [currentTimeInSeconds, pauseTimer]);
+  
   return (
     <Card className=" w-full max-w-[500px] flex flex-col items-center">
       <CardHeader className="flex flex-row items-center justify-center">
