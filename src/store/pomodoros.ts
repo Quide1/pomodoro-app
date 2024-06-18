@@ -6,6 +6,8 @@ import {
     type Preferences,
 } from "@/types/pomodoros";
 import { nextTimer } from "@/utils/nextTimer";
+import { playSound } from "@/utils/playSound";
+import { SoundRoutes } from "@/constants/soundRoutes";
 export interface AppState {
     timerSettings: TimerSettings; // configuraciones del temporizador
     pomodoroSession: PomodoroSession; // sesión de Pomodoro
@@ -31,12 +33,12 @@ export interface AppState {
     }) => Promise<void>;
     completeTimer: () => Promise<void>;
     restOneSecond: () => Promise<void>;
-    changeAutoStart : () => Promise<void>
+    changeAutoStart: () => Promise<void>
 }
 
 const initialTimerSettings: TimerSettings = {
     pomodoro: 3,
-    shortBreak: 2   ,
+    shortBreak: 2,
     longBreak: 1200,
 };
 const initialPomodoroSession: PomodoroSession = {
@@ -48,7 +50,7 @@ const initialPreferences: Preferences = {
     autoPlay: false,
     notificationSettings: {
         enabled: false,
-        sound: "pajarito",
+        sound: `${SoundRoutes[0].path}`,
     },
 };
 const initialStatus: TimerStatus = {
@@ -127,8 +129,8 @@ export const usePomodoroStore = create<AppState>((set, get) => ({
         set({ timerStatus: newTimerStatus });
     },
     completeTimer: async () => {
-        console.log("Complete Timer");
-        const { timerStatus, pomodoroSession, resetTimer,startTimer,preferences} = get()
+        const { timerStatus, pomodoroSession, resetTimer, startTimer, preferences } = get()
+        playSound(preferences.notificationSettings.sound)
         const currentTimer = timerStatus.currentTimer
         console.log(currentTimer)
         const nexTimer = nextTimer(currentTimer, pomodoroSession.pomodoroCount)
@@ -136,7 +138,7 @@ export const usePomodoroStore = create<AppState>((set, get) => ({
         console.log(nexTimer)
         const newPomodoroSession = {
             ...pomodoroSession,
-            pomodoroCount: pomodoroSession.pomodoroCount+1
+            pomodoroCount: pomodoroSession.pomodoroCount + 1
         }
         const newTimerStatus = {
             isRunning: false,
@@ -145,17 +147,19 @@ export const usePomodoroStore = create<AppState>((set, get) => ({
         set({ timerStatus: newTimerStatus });
         set({ pomodoroSession: newPomodoroSession })
         resetTimer()
-        if(preferences.autoPlay){
+        if (preferences.autoPlay) {
             startTimer()
 
         }
     },
 
-    changeAutoStart: async()=>{
-        const {preferences} = get()
-        set({preferences:{
-            ...preferences,
-            autoPlay:!preferences.autoPlay
-        }})
+    changeAutoStart: async () => {
+        const { preferences } = get()
+        set({
+            preferences: {
+                ...preferences,
+                autoPlay: !preferences.autoPlay
+            }
+        })
     }
 }));

@@ -31,8 +31,8 @@ function HomeHeader() {
             </DialogDescription>
           </DialogHeader>
           <SettingsDialogContent />
-          <SettingsPreferences/>
           <Separator className="my-4 bg-black" />
+          <SettingsPreferences/>
           <DialogFooter>
             <DialogClose asChild={true}>
               <Button type="submit">Ok</Button>

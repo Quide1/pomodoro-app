@@ -9,9 +9,9 @@ type SwitchProps = {
 }
 function SwitchUi({ label, onSwitchFunction, checked }: SwitchProps) {
   return (
-    <div className='flex flex-row  items-center justify-center gap-2'>
+    <div className='flex flex-row  items-center justify-between gap-2 content-start border-2 border-red-700'>
       <Label>{label}</Label>
-      <Switch className='border-2 border-red-400' onCheckedChange={onSwitchFunction} checked={checked} />
+      <Switch className='border-2 border-black bg-blackA6 border-l-green-950 rounded-full relative shadow-[0_2px_10px] shadow-black focus:shadow-[0_0_0_2px] focus:shadow-black data-[state=checked]:bg-slate-700 outline-none cursor-default' onCheckedChange={onSwitchFunction} checked={checked} />
 
     </div>
 

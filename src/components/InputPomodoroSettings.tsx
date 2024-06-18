@@ -19,7 +19,7 @@ function InputPomodoroSettings({ id, label, currentTime,createOnChangeHandler }:
  
   return (
     <div className="grid grid-cols-4 items-center gap-6 ">
-      <Label htmlFor={id} className="text-right col-span-2">
+      <Label htmlFor={id} className="text-center col-span-2">
         {label}
       </Label>
       <Input
