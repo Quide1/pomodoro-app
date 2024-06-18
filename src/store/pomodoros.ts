@@ -34,6 +34,7 @@ export interface AppState {
     completeTimer: () => Promise<void>;
     restOneSecond: () => Promise<void>;
     changeAutoStart: () => Promise<void>
+    changeSoundAlert: (newSound: string) => Promise<void>
 }
 
 const initialTimerSettings: TimerSettings = {
@@ -48,10 +49,7 @@ const initialPomodoroSession: PomodoroSession = {
 const initialPreferences: Preferences = {
     background: "#fafafa",
     autoPlay: false,
-    notificationSettings: {
-        enabled: false,
-        sound: `${SoundRoutes[0].path}`,
-    },
+    soundNotification: `${SoundRoutes[0].path}`,
 };
 const initialStatus: TimerStatus = {
     currentTimer: "pomodoro",
@@ -130,7 +128,7 @@ export const usePomodoroStore = create<AppState>((set, get) => ({
     },
     completeTimer: async () => {
         const { timerStatus, pomodoroSession, resetTimer, startTimer, preferences } = get()
-        playSound(preferences.notificationSettings.sound)
+        playSound(preferences.soundNotification)
         const currentTimer = timerStatus.currentTimer
         console.log(currentTimer)
         const nexTimer = nextTimer(currentTimer, pomodoroSession.pomodoroCount)
@@ -159,6 +157,15 @@ export const usePomodoroStore = create<AppState>((set, get) => ({
             preferences: {
                 ...preferences,
                 autoPlay: !preferences.autoPlay
+            }
+        })
+    },
+    changeSoundAlert: async (newSound: string) => {
+        const { preferences } = get()
+        set({
+            preferences: {
+                ...preferences,
+                soundNotification: newSound
             }
         })
     }
