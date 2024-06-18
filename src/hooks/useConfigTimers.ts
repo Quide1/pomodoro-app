@@ -8,14 +8,19 @@ export function useConfigTimer() {
   const changeCurrentTimer = usePomodoroStore(
     (state) => state.changeCurrentTimer
   );
+  const changeSoundAlert = usePomodoroStore((state)=>state.changeSoundAlert)
   const changeAutoStart = usePomodoroStore((state)=>state.changeAutoStart)
   const preferences = usePomodoroStore((state)=>state.preferences)
   const timerSettings = usePomodoroStore((state) => state.timerSettings);
+  const soundPreferences = usePomodoroStore((state)=>state.preferences.soundNotification)
+
   return {
+    changeSoundAlert,
     changeConfigTimer,
     timerSettings,
     changeCurrentTimer,
     changeAutoStart,
-    preferences
+    preferences,
+    soundPreferences
   };
 }
