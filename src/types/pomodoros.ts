@@ -15,8 +15,5 @@ export interface TimerStatus {
 export interface Preferences {
     background: string;
     autoPlay:boolean;
-    notificationSettings: {
-        enabled: boolean;
-        sound: string;
-    };
+    soundNotification: string;
 }
