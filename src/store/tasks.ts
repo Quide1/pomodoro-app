@@ -7,6 +7,7 @@ interface AppState {
     toggleProgress: (index: number) => Promise<void>;
     eliminateTasksDone: () => Promise<void>;
     eliminateOneTask: (indexToEliminate: number) => Promise<void>;
+    editTask:(indexToEdit:number,taskEdited:Task)=>Promise<void>
 }
 
 const initialTasks: Task[] = [
@@ -19,6 +20,16 @@ export const useTaskStore = create<AppState>((set, get) => ({
         const { tasks } = get();
         const newTasks = [...tasks, newTask];
         set({ tasks: newTasks });
+    },
+    editTask:async(indexToEdit,taskEdited)=>{
+        const { tasks } = get();
+        const newTasks = tasks.map((task,index)=>{
+            if(index === indexToEdit){
+                return taskEdited
+            }
+            return task
+        })
+        set({tasks:newTasks})
     },
     toggleProgress: async (index) => {
         const { tasks } = get();
@@ -33,6 +44,7 @@ export const useTaskStore = create<AppState>((set, get) => ({
         });
         set({ tasks: newTasks });
     },
+
     eliminateTasksDone: async () => {
         const { tasks } = get();
         const newTasks = tasks.filter((task) => task.status !== TaskStatus.Done);
