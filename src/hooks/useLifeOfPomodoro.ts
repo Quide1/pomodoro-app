@@ -1,5 +1,4 @@
 import { usePomodoroStore } from "@/store/pomodoros";
-import { useEffect } from "react";
 
 
 export function useLifeOfPomodoro () {
