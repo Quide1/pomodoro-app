@@ -13,26 +13,28 @@ import SettingsIcon from "@/icons/SettingsIcon";
 import SettingsDialogContent from "./SettingsDialogContent";
 import { Separator } from "@/components/ui/separator";
 import SettingsPreferences from "./SettingsPreferences";
+import { useTheme } from "@/hooks/useTheme";
 
 function HomeHeader() {
+  const {currentBackground} = useTheme()
   return (
-    <header className="w-full bg-gray-500 border-red-400 border-1 flex items-center h-[7vh] p-2 text-4xl">
+    <header className={`w-full ${currentBackground} border-1 flex items-center h-[7vh] p-2 text-4xl justify-center`}>
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant="default" size={"icon"}>
+          <Button variant="default"  className="border-white bg-gray-800 " size={"icon"}>
             <SettingsIcon />
           </Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px] bg-slate-400">
+        <DialogContent className="sm:max-w-[425px] bg-gray-400">
           <DialogHeader>
             <DialogTitle>Configuración</DialogTitle>
-            <DialogDescription>
+            <DialogDescription className="text-gray-800">
               Configura los tiempos que quieres manejar para tu pomodoro
             </DialogDescription>
           </DialogHeader>
           <SettingsDialogContent />
           <Separator className="my-4 bg-black" />
-          <SettingsPreferences/>
+          <SettingsPreferences />
           <DialogFooter>
             <DialogClose asChild={true}>
               <Button type="submit">Ok</Button>

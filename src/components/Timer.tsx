@@ -4,7 +4,9 @@ import FooterTimerCard from "./FooterTimerCard";
 import { useTimerFunctionalities } from "@/hooks/useTimerFunctionalities";
 import { useEffect } from "react";
 import { useLifeOfPomodoro } from "@/hooks/useLifeOfPomodoro";
+
 function Timer() {
+
   const {
     currentTime,
     timerStatus,
@@ -36,12 +38,12 @@ function Timer() {
 
 
   return (
-    <Card className=" w-full max-w-[500px] flex flex-col items-center">
+    <Card className={` w-full max-w-[500px] flex flex-col items-center bg-gray-400 border-black bg-opacity-20 `}>
       <CardHeader className="flex flex-row items-center justify-center">
         <GroupSelectableButtons />
       </CardHeader>
       <CardContent>
-        <p className="text-8xl lg:text-10xl">{currentTime}</p>
+        <p className="text-8xl lg:text-10xl text-white">{currentTime}</p>
       </CardContent>
       <FooterTimerCard />
     </Card>

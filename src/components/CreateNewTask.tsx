@@ -46,18 +46,19 @@ function CreateNewTask() {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button className="flex flex-row items-center justify-between border-2 border-blue-800">
+            <Button className="flex flex-row items-center justify-between border-2 border-white bg-gray-800   ">
                     Crear nueva tarea
                     <CrossIcon className="m-2 h-4 w-4" />
                 </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[500px]">
+            <DialogContent className="sm:max-w-[500px] w-full bg-gray-400"
+>
                 <form>
                     <DialogHeader>
                         <DialogTitle>Crea una nueva tarea</DialogTitle>
                     </DialogHeader>
-                    <div className="grid gap-4 py-4">
-                        <div className="grid grid-cols-4 items-center gap-4">
+                    <div className="grid gap-4 py-4 flex-wrap">
+                        <div className="flex flex-row flex-wrap items-center gap-4">
                             <Label htmlFor="description" className="text-right">
                                 Descripción
                             </Label>

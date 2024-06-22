@@ -62,7 +62,7 @@ function CardTask({ description, status, index }: TaskProps) {
     return (
         <>
             <Dialog>
-                <Card className={`w-full min-h-[80px] flex flex-row b-2 b-red-500 max-w-2xl ${status === TaskStatus.Done ? 'bg-slate-800' : 'bg-slate-600'}`}>
+                <Card className={`w-full min-h-[80px] flex flex-row b-2 b-red-500 max-w-2xl ${status === TaskStatus.Done ? 'bg-gray-950' : 'bg-gray-800'}`}>
                     <CardContent className="w-full flex flex-row items-center justify-between p-3 border-2  rounded-xl">
                         <div className="flex flex-row">
                             <div onClick={toggleProgressHandler} className="flex items-center gap-3">
@@ -73,24 +73,24 @@ function CardTask({ description, status, index }: TaskProps) {
                             </CardDescription>
                         </div>
                         <div className="flex flex-col gap-2">
-                            <div className="bg-red-500 p-1 b-2 rounded-sm">
+                            <div className="bg-gray-500  p-1 b-2 rounded-sm">
                                 <ThrashIcon onClickFunction={onDeleteHandler} className="w-5 h-5 cursor-pointer" />
                             </div>
                             <DialogTrigger asChild>
-                                <div className="bg-red-500 p-1 b-2 rounded-sm">
+                                <div className="bg-gray-500 p-1 b-2 rounded-sm">
                                     <PencilIcon className="w-5 h-5 cursor-pointer" />
                                 </div>
                             </DialogTrigger>
                         </div>
                     </CardContent>
                 </Card>
-                <DialogContent className="sm:max-w-[500px]">
+                <DialogContent className="sm:max-w-[500px]  bg-gray-400">
                     <form>
                         <DialogHeader>
                             <DialogTitle>Edita una tarea</DialogTitle>
                         </DialogHeader>
                         <div className="grid gap-4 py-4">
-                            <div className="grid grid-cols-4 items-center gap-4">
+                        <div className="flex flex-row flex-wrap items-center gap-4">
                                 <Label htmlFor="description" className="text-right">
                                     Descripción
                                 </Label>

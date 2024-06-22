@@ -23,14 +23,14 @@ function DeleteTaskDone() {
     return (
         <> <AlertDialog>
             <AlertDialogTrigger asChild>
-                <Button className="flex flex-row items-center justify-between border-2 border-blue-800 ">
+                <Button className="flex flex-row items-center justify-between border-2 border-white bg-gray-800  ">
                     Eliminar hechas <ThrashIcon className="m-2 h-4 w-4" />
                 </Button>
             </AlertDialogTrigger>
-            <AlertDialogContent>
+            <AlertDialogContent className="bg-gray-400">
                 <AlertDialogHeader>
                     <AlertDialogTitle>Estas seguro?</AlertDialogTitle>
-                    <AlertDialogDescription>
+                    <AlertDialogDescription className="text-gray-800">
                         Esta acción eliminara todas las tareas que tengas marcadas como "completas" y es irreversible
                     </AlertDialogDescription>
                 </AlertDialogHeader>

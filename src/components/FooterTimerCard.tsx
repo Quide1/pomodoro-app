@@ -8,10 +8,10 @@ function FooterTimerCard() {
   return (
     <CardFooter>
       {timerStatus.isRunning ? (
-        <Button onClick={pauseTimer}>
+        <Button className="bg-gray-800  " onClick={pauseTimer}>
          Pausar <PauseIcon className={'ml-2'}/></Button>
       ) : (
-        <Button onClick={startTimer}>Comenzar  <PlayIcon className="ml-2"/></Button>
+        <Button className="bg-gray-800  " onClick={startTimer}>Comenzar  <PlayIcon className="ml-2"/></Button>
       )}
     </CardFooter>
   );

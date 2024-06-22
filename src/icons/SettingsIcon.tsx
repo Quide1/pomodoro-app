@@ -1,7 +1,7 @@
 function SettingsIcon() {
   return (
     <svg
-      className="w-4 l:w-10 xl:w-8"
+      className="w-6 l:w-12 xl:w-8"
       viewBox="0 0 15 15"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -1,17 +1,21 @@
 // SelectableButton.tsx
+import { useTheme } from '@/hooks/useTheme';
 import React from 'react';
 
 type SelectableButtonProps = {
   label: string;
   isSelected: boolean;
   onClick: () => void;
-  bgColor: string;
+  
 };
 
-const SelectableButton: React.FC<SelectableButtonProps> = ({ label, isSelected, onClick, bgColor }) => {
+const SelectableButton: React.FC<SelectableButtonProps> = ({ label, isSelected, onClick }) => {
+  const { currentBackground } = useTheme()
+
   return (
     <button
-      className={`p-1 border text-clip ${isSelected ? 'bg-blue-500 text-white' : 'bg-gray-300 text-black'} rounded-sm ${bgColor}`}
+      className={`p-2 border border-black text-clip ${isSelected ? ` 
+        ${currentBackground} text-white` : 'bg-gray-800 text-white'} rounded-sm `}
       onClick={onClick}
     >
       {label}

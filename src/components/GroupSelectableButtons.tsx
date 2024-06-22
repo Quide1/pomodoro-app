@@ -33,7 +33,6 @@ const ButtonGroup: React.FC = () => {
                     label={value}
                     isSelected={selectedButton === key}
                     onClick={() => handleButtonClick(key)}
-                    bgColor="bg-red-500"
                 />
             ))}
         </div>

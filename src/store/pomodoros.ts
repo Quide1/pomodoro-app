@@ -46,7 +46,7 @@ const initialPomodoroSession: PomodoroSession = {
     completedSessions: 0
 };
 const initialPreferences: Preferences = {
-    background: "",
+    background: "bg-green-900",
     autoPlay: false,
     soundNotification: `${SoundRoutes[0].path}`,
 };

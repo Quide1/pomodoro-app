@@ -1,11 +1,11 @@
 import { usePomodoroStore } from "@/store/pomodoros";
 
 export function useTheme () {
-    const currentTimer = usePomodoroStore(
-        (state) => state.timerStatus.currentTimer
+    const currentBackground = usePomodoroStore(
+        (state) => state.preferences.background
       );
       
     return{
-      currentTimer
+      currentBackground
     }
 }
