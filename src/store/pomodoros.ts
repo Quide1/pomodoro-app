@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { 
+import {
     type TimerSettings,
     type PomodoroSession,
     type TimerStatus,
@@ -25,7 +25,6 @@ export interface AppState {
     startTimer: () => Promise<void>;
     stopTimer: () => Promise<void>;
     resetTimer: () => Promise<void>;
-    completePomodoro: () => Promise<void>;
     changeCurrentTimer: ({
         value,
     }: {
@@ -47,7 +46,7 @@ const initialPomodoroSession: PomodoroSession = {
     completedSessions: 0
 };
 const initialPreferences: Preferences = {
-    background: "#fafafa",
+    background: "",
     autoPlay: false,
     soundNotification: `${SoundRoutes[0].path}`,
 };
@@ -116,9 +115,7 @@ export const usePomodoroStore = create<AppState>((set, get) => ({
         });
 
     },
-    completePomodoro: async () => {
-        console.log("Complete Pomodoro");
-    },
+
     changeCurrentTimer: async ({ value }) => {
         const newTimerStatus = {
             isRunning: false,
