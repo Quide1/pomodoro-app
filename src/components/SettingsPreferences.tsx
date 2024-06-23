@@ -5,7 +5,7 @@ function SettingsPreferences() {
     const { changeAutoStart, preferences } = useConfigTimer();
     const autoStart = preferences.autoPlay;
     return (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 border-0">
             <SwitchUi
                 label="Inicio automático"
                 onSwitchFunction={changeAutoStart}

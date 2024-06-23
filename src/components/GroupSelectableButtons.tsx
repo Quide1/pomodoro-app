@@ -15,6 +15,7 @@ const ButtonGroup: React.FC = () => {
 
     useEffect(()=>{
     setSelectedButton((currentTimer))
+    
     },[currentTimer])
     const handleButtonClick = (keyLabel: string) => {
         if(keyLabel == selectedButton){
