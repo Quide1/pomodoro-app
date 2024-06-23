@@ -1,10 +1,12 @@
-import { RouterProvider } from './routes/routerProvider'
 import './App.css'
+import HomePage from './pages/home-page'
 
 function App() {
 
   return (
-    <RouterProvider/>
+   <>
+    <HomePage/>
+   </>
   )
 }
 
