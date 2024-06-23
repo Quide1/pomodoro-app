@@ -13,9 +13,9 @@ function SettingsDialogContent() {
   const createOnChangeHandler: CreatorOfOnChangeHandler = useCallback(
     (key) =>
       (event: React.ChangeEvent<HTMLInputElement>): void => {
-        const newValue = parseInt(event.target.value);
+        let newValue = parseInt(event.target.value);
         if(newValue < 1){
-          return
+          newValue=1
         }
         changeConfigTimer({ key, value: newValue * 60});
       },
