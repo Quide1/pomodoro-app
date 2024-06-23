@@ -54,7 +54,7 @@ function CardTask({ description, status, index }: TaskProps) {
                 status: TaskStatus.ToDo,
             } as Task;
 
-            editTask(index,newTask);
+            editTask(index, newTask);
             setError(null);
         }
     };
@@ -62,7 +62,7 @@ function CardTask({ description, status, index }: TaskProps) {
     return (
         <>
             <Dialog>
-                <Card className={`w-full min-h-[80px] flex flex-row b-2 b-red-500 max-w-2xl ${status === TaskStatus.Done ? 'bg-gray-950' : 'bg-gray-800'}`}>
+                <Card className={` w-full min-h-[80px] flex flex-row b-2 b-red-500 max-w-2xl ${status === TaskStatus.Done ? 'bg-gray-950' : 'bg-gray-800'}`}>
                     <CardContent className="w-full flex flex-row items-center justify-between p-3 border-2  rounded-xl">
                         <div className="flex flex-row">
                             <div onClick={toggleProgressHandler} className="flex items-center gap-3">
@@ -90,7 +90,7 @@ function CardTask({ description, status, index }: TaskProps) {
                             <DialogTitle>Edita una tarea</DialogTitle>
                         </DialogHeader>
                         <div className="grid gap-4 py-4">
-                        <div className="flex flex-row flex-wrap items-center gap-4">
+                            <div className="flex flex-row flex-wrap items-center gap-4">
                                 <Label htmlFor="description" className="text-right">
                                     Descripción
                                 </Label>

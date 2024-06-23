@@ -14,8 +14,8 @@ function Tasks() {
                 <DeleteTaskDone />
                 <CreateNewTask />
             </div>
-            <ScrollArea className=" h-[500px]">
-                <CardContent className="flex flex-col gap-4 w-full items-center ">
+            <ScrollArea className=" h-[500px] w-full">
+                <CardContent className="flex flex-col-reverse gap-4items-center w-full gap-2">
                     {
                         tasks.length > 0 ?
                             tasks.map((task, index) => {
