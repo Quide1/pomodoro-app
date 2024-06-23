@@ -7,7 +7,7 @@ import QuestionsSection from "./QuestionsSection";
 function HomeMain() {
   const { currentBackground } = useTheme();
   return (
-    <main className={`p-4 ${currentBackground} flex flex-col items-center overflow-hidden p-0`}>
+    <main className={`p-4 ${currentBackground} flex flex-col items-center overflow-hidden p-0 mt-0`}>
       <section className="min-h-[93vh]  w-full flex flex-col items-center">
         <Timer />
         <Tasks />
