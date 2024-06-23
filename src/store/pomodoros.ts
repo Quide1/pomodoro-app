@@ -42,8 +42,8 @@ export interface AppState {
 }
 
 const initialTimerSettings: TimerSettings = {
-    pomodoro: 3,
-    shortBreak: 2,
+    pomodoro: 1500,
+    shortBreak: 300,
     longBreak: 1200,
 };
 const initialPomodoroSession: PomodoroSession = {
