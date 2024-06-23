@@ -5,6 +5,7 @@ import { useConfigTimer } from "@/hooks/useConfigTimers";
 import { useTimerEntries } from "@/hooks/useTimerEntries";
 import { TimerSettings } from "@/types/pomodoros";
 import { useTimerFunctionalities } from "@/hooks/useTimerFunctionalities";
+import { useTheme } from "@/hooks/useTheme";
 
 const ButtonGroup: React.FC = () => {
     const { timerLabels } = useTimerEntries();
@@ -12,10 +13,10 @@ const ButtonGroup: React.FC = () => {
     const {currentTimer } =useTimerFunctionalities()
     const [selectedButton, setSelectedButton] = useState<string>(currentTimer);
     const buttonEntries = Object.entries(timerLabels);
-
+    const {checkBackGround} = useTheme()
     useEffect(()=>{
     setSelectedButton((currentTimer))
-    
+    checkBackGround()
     },[currentTimer])
     const handleButtonClick = (keyLabel: string) => {
         if(keyLabel == selectedButton){
