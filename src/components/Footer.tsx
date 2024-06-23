@@ -3,7 +3,7 @@ import LinkedInIcon from '@/icons/LinkedinIcon'
 
 function Footer() {
     return (
-        <footer className=' w-screen  h-12 flex flex-row items-center justify-center gap-2 p-2'>
+        <footer className=' w-full  h-12 flex flex-row items-center justify-center gap-2 p-2 border'>
             <p>Hecho por Eze ❤️</p>
             <a target={'_blank'} href="https://www.linkedin.com/in/ezequiel-r/" >
             <LinkedInIcon />

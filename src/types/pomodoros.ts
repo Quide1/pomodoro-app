@@ -24,7 +24,7 @@
     }
     
     export const ThemesStrings: EnumThemes = {
-        pomodoro:"bg-green-900",
-        longBreak:"bg-blue-900",
-        shortBreak:"bg-yellow-900"
+        pomodoro:"bg-red-900",
+        longBreak:"bg-green-900",
+        shortBreak:"bg-blue-900"
     }
