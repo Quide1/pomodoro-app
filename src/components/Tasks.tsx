@@ -9,7 +9,7 @@ function Tasks() {
     const { tasks } = useTaskFunctionalities()
 
     return (
-        <Card className=" w-full max-w-[500px] flex flex-col items-center mt-6 bg-gray-400 border-white bg-opacity-20">
+        <Card className=" w-full max-w-[500px] flex flex-col items-center mt-6 mb-4 bg-gray-400 border-white bg-opacity-20">
             <div className="flex flex-row flex-wrap gap-4 w-full items-center justify-center p-2 m-2">
                 <DeleteTaskDone />
                 <CreateNewTask />

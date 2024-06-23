@@ -1,12 +1,18 @@
 import Timer from "@/components/Timer";
 import Tasks from "./Tasks";
 import { useTheme } from "@/hooks/useTheme";
+
+import QuestionsSection from "./QuestionsSection";
+
 function HomeMain() {
-  const { currentBackground } = useTheme()
+  const { currentBackground } = useTheme();
   return (
-    <main className={`p-2 ${currentBackground} min-h-screen flex flex-col items-center overflow-hidden`}>
-      <Timer />
-      <Tasks />
+    <main className={`p-4 ${currentBackground} flex flex-col items-center overflow-hidden p-0`}>
+      <section className="min-h-[93vh]  w-full flex flex-col items-center">
+        <Timer />
+        <Tasks />
+      </section>
+    <QuestionsSection/>
     </main>
   );
 }

@@ -38,7 +38,7 @@ function Timer() {
 
 
   return (
-    <Card className={` w-full max-w-[500px] flex flex-col items-center bg-gray-400 border-black bg-opacity-20 `}>
+    <Card className={` w-full max-w-[500px] flex flex-col items-center bg-gray-400 border-black bg-opacity-20 mt-4 `}>
       <CardHeader className="flex flex-row items-center justify-center">
         <GroupSelectableButtons />
       </CardHeader>
