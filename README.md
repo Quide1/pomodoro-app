@@ -11,6 +11,8 @@ Pomodoroo es una aplicación de gestión de tiempo basada en la técnica Pomodor
 - **Gestión de Tareas**: Añade, edita y elimina tareas para mantenerte organizado.
 - **Limpieza de Tareas**: Elimina rápidamente las tareas completadas para mantener tu lista de tareas actualizada.
 
+![Pomodoro](https://github.com/Quide1/pomodoro-app/blob/main/public/PomodoroSs2.png)
+![Pomodoroo Logo](https://github.com/Quide1/pomodoro-app/blob/main/public/PomodoroSS.png)
 ## Instalación
 
 1. Clona este repositorio en tu máquina local:
