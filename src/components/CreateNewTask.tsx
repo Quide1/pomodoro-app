@@ -46,7 +46,7 @@ function CreateNewTask() {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button className="flex flex-row items-center justify-between border-2 border-white bg-gray-800   ">
+                <Button aria-label="Crear nueva tarea" className="flex flex-row items-center justify-between border-2 border-white bg-gray-800   ">
                     Crear nueva tarea
                     <CrossIcon className="m-2 h-4 w-4" />
                 </Button>
@@ -81,6 +81,7 @@ function CreateNewTask() {
                     <DialogFooter>
                         <DialogClose asChild>
                             <Button
+                            aria-label="Aceptar menu de crear nueva tarea"
                                 type="button"
                                 disabled={error !== null}
                                 onClick={onClickHandler}

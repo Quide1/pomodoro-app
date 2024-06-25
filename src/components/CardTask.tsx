@@ -114,6 +114,7 @@ function CardTask({ description, status, index }: TaskProps) {
                         <DialogFooter>
                             <DialogClose asChild>
                                 <Button
+                                aria-label="aceptar menu de editar"
                                     type="button"
                                     disabled={error !== null}
                                     onClick={onClickHandler}

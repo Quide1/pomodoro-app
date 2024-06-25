@@ -33,7 +33,7 @@ function AlarmPreferences() {
                     })}
                 </SelectContent>
             </Select>
-            <Button variant="outline" size="icon" onClick={
+            <Button  aria-label="Escuchar sonido" variant="outline" size="icon" onClick={
                ()=>{
                 playSound(soundPreferences)
                }

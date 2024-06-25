@@ -21,7 +21,7 @@ function HomeHeader() {
     <header className={`w-full ${currentBackground} border-1 flex items-center h-[7vh] p-2 text-4xl justify-center`}>
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant="default"  className="border-white bg-gray-800 " size={"icon"}>
+          <Button aria-label="Abrir configuracion" variant="default"  className="border-white bg-gray-800 " size={"icon"}>
             <SettingsIcon />
           </Button>
         </DialogTrigger>
@@ -37,7 +37,7 @@ function HomeHeader() {
           <SettingsPreferences />
           <DialogFooter>
             <DialogClose asChild={true}>
-              <Button type="submit">Ok</Button>
+              <Button aria-label="Aceptar configuracion" type="submit">Ok</Button>
             </DialogClose>
           </DialogFooter>
         </DialogContent>

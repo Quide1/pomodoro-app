@@ -1,4 +1,3 @@
-// ButtonGroup.tsx
 import React, { useEffect, useState } from "react";
 import SelectableButton from "./SelectableButton";
 import { useConfigTimer } from "@/hooks/useConfigTimers";

@@ -14,6 +14,7 @@ const SelectableButton: React.FC<SelectableButtonProps> = ({ label, isSelected, 
 
   return (
     <button
+      aria-label={`Boton que selecciona a ${label}`}
       className={`p-2 border border-black text-clip ${isSelected ? ` 
         ${currentBackground} text-white` : 'bg-gray-800 text-white'} rounded-sm `}
       onClick={onClick}

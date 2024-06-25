@@ -23,7 +23,7 @@ function DeleteTaskDone() {
     return (
         <> <AlertDialog>
             <AlertDialogTrigger asChild>
-                <Button className="flex flex-row items-center justify-between border-2 border-white bg-gray-800  ">
+                <Button aria-label="Aceptar eliminación de tareas hechas" className="flex flex-row items-center justify-between border-2 border-white bg-gray-800  ">
                     Eliminar hechas <ThrashIcon className="m-2 h-4 w-4" />
                 </Button>
             </AlertDialogTrigger>
