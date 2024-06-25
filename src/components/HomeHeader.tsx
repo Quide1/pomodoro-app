@@ -18,7 +18,7 @@ import { useTheme } from "@/hooks/useTheme";
 function HomeHeader() {
   const {currentBackground} = useTheme()
   return (
-    <header className={`w-full ${currentBackground} border-1 flex items-center h-[7vh] p-2 text-4xl justify-center`}>
+    <header className={`w-full ${currentBackground} border-1 flex items-center h-[7vh] p-2 text-4xl justify-center mb-0`}>
       <Dialog>
         <DialogTrigger asChild>
           <Button aria-label="Abrir configuracion" variant="default"  className="border-white bg-gray-800 " size={"icon"}>
