@@ -11,7 +11,7 @@ interface AppState {
 }
 
 const initialTasks: Task[] = [
-    { description: "Inicia un pomodoro, ponte a estudiar mucho lorem !", status: TaskStatus.ToDo },
+    { description: "Inicia un pomodoro!", status: TaskStatus.ToDo },
 ];
 
 export const useTaskStore = create<AppState>((set, get) => ({
