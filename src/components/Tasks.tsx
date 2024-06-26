@@ -15,12 +15,12 @@ function Tasks() {
                 <CreateNewTask />
             </div>
             <ScrollArea className=" h-[500px] w-full">
-                <CardContent className="flex flex-col-reverse gap-4items-center w-full gap-2">
+                <CardContent className="flex flex-col-reverse gap-4items-center w-full gap-2 items-center">
                     {
                         tasks.length > 0 ?
                             tasks.map((task, index) => {
                                 return <CardTAsk key={index} description={task.description} status={task.status} index={index} ></CardTAsk>
-                            }) : <p className="text-gray-600">Sin tareas pendientes</p>
+                            }) : <p className="text-gray-400">Sin tareas pendientes</p>
                     }
                 </CardContent>
             </ScrollArea>
