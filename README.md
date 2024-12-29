@@ -1,69 +1,68 @@
-# Pomodoroo
+# PomodoroApp
 
-Pomodoroo es una aplicación de gestión de tiempo basada en la técnica Pomodoro. Te ayuda a mejorar tu productividad dividiendo tu trabajo en intervalos, conocidos como pomodoros, separados por breves descansos. Esta aplicación ofrece una variedad de funciones para personalizar tu experiencia y mantener tus tareas organizadas.
+PomodoroApp is a time management application based on the Pomodoro Technique. It helps you improve productivity by dividing your work into intervals, known as pomodoros, separated by short breaks. This app offers various features to customize your experience and keep your tasks organized.
 
-## Funciones Principales
+## Key Features
 
-- **Ciclos de Pomodoro**: Configura ciclos de trabajo y descanso para maximizar tu eficiencia.
-- **Cambio de Tiempo**: Ajusta la duración de los intervalos de trabajo y descanso según tus necesidades.
-- **Música de Fondo**: Escucha música relajante mientras trabajas para mejorar tu concentración.
-- **Auto Play de Pomodoro**: Los intervalos de trabajo y descanso se inician automáticamente sin intervención manual.
-- **Gestión de Tareas**: Añade, edita y elimina tareas para mantenerte organizado.
-- **Limpieza de Tareas**: Elimina rápidamente las tareas completadas para mantener tu lista de tareas actualizada.
+- **Pomodoro Cycles**: Set up work and break cycles to maximize your efficiency.
+- **Time Adjustment**: Customize the duration of work and break intervals to fit your needs.
+- **Background Music**: Listen to relaxing music while working to enhance focus.
+- **Auto Play for Pomodoros**: Work and break intervals start automatically without manual intervention.
+- **Task Management**: Add, edit, and delete tasks to stay organized.
+- **Task Cleanup**: Quickly remove completed tasks to keep your task list up-to-date.
 
 ![Pomodoro](https://github.com/Quide1/pomodoro-app/blob/main/public/PomodoroSs2.png)
-![Pomodoroo Logo](https://github.com/Quide1/pomodoro-app/blob/main/public/PomodoroSS.png)
-## Instalación
+![Pomodoro Logo](https://github.com/Quide1/pomodoro-app/blob/main/public/PomodoroSS.png)
 
-1. Clona este repositorio en tu máquina local:
+## Installation
+
+1. Clone this repository to your local machine:
     ```bash
     git clone https://github.com/Quide1/pomodoro-app
     ```
 
-2. Navega al directorio del proyecto:
+2. Navigate to the project directory:
     ```bash
-    cd pomodoroo
+    cd Pomodoro
     ```
 
-3. Instala las dependencias necesarias:
+3. Install the necessary dependencies:
     ```bash
     npm install
     ```
 
-4. Inicia la aplicación:
+4. Start the application:
     ```bash
     npm start
     ```
 
-## Uso
+## Usage
 
-1. Abre la aplicación en tu navegador en `http://localhost:3000`.
-2. Configura la duración de tus pomodoros y descansos en la sección de configuración.
-3. Añade tus tareas en la lista de tareas.
-4. Inicia un ciclo de pomodoro y concéntrate en tu tarea hasta que suene la alarma.
-5. Disfruta de tu descanso y prepárate para el siguiente pomodoro.
+1. Open the app in your browser at `http://localhost:3000`.
+2. Set the duration of your pomodoros and breaks in the settings section.
+3. Add your tasks to the task list.
+4. Start a pomodoro cycle and focus on your task until the alarm sounds.
+5. Enjoy your break and get ready for the next pomodoro.
 
-## Contribuciones
+## Contributions
 
-¡Las contribuciones son bienvenidas! Si tienes alguna idea o encuentras algún error, por favor crea un issue o abre un pull request.
+Contributions are welcome! If you have an idea or find a bug, please create an issue or open a pull request.
 
-1. Haz un fork del proyecto.
-2. Crea una nueva rama para tu función o arreglo:
+1. Fork the project.
+2. Create a new branch for your feature or fix:
     ```bash
-    git checkout -b nueva-funcion
+    git checkout -b new-feature
     ```
-3. Realiza tus cambios y haz commit:
+3. Make your changes and commit them:
     ```bash
-    git commit -m 'Añadida nueva función'
+    git commit -m 'Added new feature'
     ```
-4. Sube tus cambios al repositorio:
+4. Push your changes to the repository:
     ```bash
-    git push origin nueva-funcion
+    git push origin new-feature
     ```
-5. Abre un pull request en GitHub.
-
+5. Open a pull request on GitHub.
 
 ---
 
-¡Gracias por usar Pomodoroo! Esperamos que esta aplicación te ayude a mejorar tu productividad y a gestionar mejor tu tiempo. Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos.
-
+Thank you for using Pomodoro! We hope this app helps you improve your productivity and better manage your time. If you have any questions or need assistance, feel free to contact us.
